@@ -46,19 +46,19 @@ CREATE TABLE `设备表` (<br/>
   `保养周期` varchar(45) DEFAULT NULL,<br/>
   PRIMARY KEY (`设备id`)<br/>
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br/>
-2.查询语句：
-该检修的设备：
-select * from 设备表;
-select 设备id from 设备表;
-where 365-datediff(now(),(select 最后保养时间 from 设备表))<3;
-![er图](https://github.com/09143797/baoyang/blob/master/er图.png)
-检修报告：
-select 保养者，保养日期 from 保养记录;
-where 设备id=1；
-![w1](https://github.com/09143797/baoyang/blob/master/w1.png)
-select 完成情况，备注 from 保养完成情况;
-where 设备id=1；
-![w2](https://github.com/09143797/baoyang/blob/master/w2.png)
-select 保养内容 from 保养项目内容;
-where 保养项目id=（select 保养项目id from 保养完成情况 where 设备id=1）；
-![w3](https://github.com/09143797/baoyang/blob/master/w3.png)
+2.查询语句：<br/>
+该检修的设备：<br/>
+select * from 设备表;<br/>
+select 设备id from 设备表;<br/>
+where 365-datediff(now(),(select 最后保养时间 from 设备表))<3;<br/>
+![er图](https://github.com/09143797/baoyang/blob/master/er图.png)<br/>
+检修报告：<br/>
+select 保养者，保养日期 from 保养记录;<br/>
+where 设备id=1；<br/>
+![w1](https://github.com/09143797/baoyang/blob/master/w1.png)<br/>
+select 完成情况，备注 from 保养完成情况;<br/>
+where 设备id=1；<br/>
+![w2](https://github.com/09143797/baoyang/blob/master/w2.png)<br/>
+select 保养内容 from 保养项目内容;<br/>
+where 保养项目id=（select 保养项目id from 保养完成情况 where 设备id=1）；<br/>
+![w3](https://github.com/09143797/baoyang/blob/master/w3.png)<br/>
