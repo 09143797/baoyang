@@ -54,7 +54,7 @@ where 365-datediff(now(),(select 最后保养时间 from 设备表))<3;
 检修报告：
 select 保养者，保养日期 from 保养记录;
 where 设备id=1；
-
+![w1](https://github.com/09143797/baoyang/blob/master/w1.png)
 select 完成情况，备注 from 保养完成情况;
 where 设备id=1；
 
