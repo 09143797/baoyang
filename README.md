@@ -62,3 +62,12 @@ where 设备id=1；<br/>
 select 保养内容 from 保养项目内容;<br/>
 where 保养项目id=（select 保养项目id from 保养完成情况 where 设备id=1）；<br/>
 ![w3](https://github.com/09143797/baoyang/blob/master/w3.png)<br/>
+select 设备类型，最后保养时间，保养周期 from 设备表;<br/>
+where 设备id=1；<br/>
+![w4](https://github.com/09143797/baoyang/blob/master/w4.png)<br/>
+select 保养者，班组 from 保养者;<br/>
+where 保养者id=（select 保养者id from 保养记录 where 设备id=1）；<br/>
+![w5](https://github.com/09143797/baoyang/blob/master/w5.png)<br/>
+select 保养消耗id，材料名称name,材料数量count from 保养消耗;<br/>
+where 保养项记录id=（select 保养记录id from 保养记录 where 设备id=1）；<br/>
+![w6](https://github.com/09143797/baoyang/blob/master/w6.png)<br/>
